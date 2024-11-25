@@ -24,8 +24,8 @@ def heron_formula(a, b, c):
     return (s*(s-a)*(s-b)*(s-c))**0.5
 
 def fibonacci(n):
-    fib = [0, 1]
-    for i in range(2, n+1):
+    fib = [1, 1]
+    for i in range(2, n):
         fib.append(fib[i-1] + fib[i-2])
     return fib
 
@@ -33,7 +33,10 @@ def fibonacci(n):
 
 #test the functions
 if __name__ == '__main__':
-    print(factorial_recursive(5))
-    print(quadratic_roots(1, -3, 2))
-    print(heron_formula(3, 4, 5))
-    print(fibonacci(10))
+    # make a file
+    with open('python_output.txt', 'w') as file:
+        file.write(str(factorial_recursive(5)) + '\n')
+        file.write(str(quadratic_roots(1, -3, 2)) + '\n')
+        file.write(str(heron_formula(3, 4, 5)) + '\n')
+        file.write(str(fibonacci(10)) + '\n')
+    

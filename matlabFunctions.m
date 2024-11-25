@@ -43,19 +43,19 @@ function fib_series = fibonacci(n)
 end
 
 
-
+fileID = fopen('matlab_output.txt','w');
 % Test the functions
 result = factorial_recursive(5);
-disp(['Factorial of 5: ', num2str(result)]);
+fprintf(fileID, [num2str(result),'\n']);
 
 roots = quadratic_roots(1, -3, 2);
-disp(['Roots of quadratic equation: ', num2str(roots)]);
+fprintf(fileID, [num2str(roots), '\n']);
 
 area = heron_formula(3, 4, 5);
-disp(['Area of triangle: ', num2str(area)]);
+fprintf(fileID, [num2str(area), '\n']);
 
 fib_series = fibonacci(10);
-disp(['Fibonacci series: ', num2str(fib_series)]);
+fprintf(fileID, [num2str(fib_series), '\n']);
 
 
 
